@@ -1,6 +1,6 @@
 // Website Configuration
 export const config = {
-  websiteUrl: "https://shimmering-elf-671197.netlify.app",
+  websiteUrl: "https://sandaruchamod.github.io/MyPortfolio",
   social: {
     github: "https://github.com/SandaruChamod",
     linkedin: "https://linkedin.com/in/sandaru-kalapuge",

@@ -34,7 +34,7 @@ const About: React.FC = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary-500/20 to-secondary-500/20 rounded-2xl transform rotate-3 blur-xl"></div>
               <img
-                src="/IMG_20240808_191946_097-1.jpg"
+                src="/MyPortfolio/IMG_20240808_191946_097-1.jpg"
                 alt="Sandaru Kalapuge"
                 className="relative rounded-2xl shadow-2xl w-full h-auto"
                 loading="lazy"

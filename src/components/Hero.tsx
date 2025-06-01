@@ -12,7 +12,7 @@ const Hero: React.FC<HeroProps> = ({ mousePosition }) => {
 
   useEffect(() => {
     const img = new Image();
-    img.src = "/DSC09623-ED-3.jpg";
+    img.src = "/MyPortfolio/DSC09623-ED-3.jpg";
     img.onload = () => setImageLoaded(true);
   }, []);
 
@@ -115,7 +115,7 @@ const Hero: React.FC<HeroProps> = ({ mousePosition }) => {
                 <div className="absolute inset-1 rounded-full overflow-hidden">
                   <div className="w-full h-full">
                     <img 
-                      src="/DSC09623-ED-3.jpg" 
+                      src="/MyPortfolio/DSC09623-ED-3.jpg" 
                       alt="Sandaru Kalapuge"
                       className={`w-full h-full object-cover scale-105 transition-all duration-700 ease-out ${
                         imageLoaded ? 'opacity-100' : 'opacity-0'
