@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Mail, FileText } from 'lucide-react';
+import { Menu, X, Github, Linkedin } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Navbar: React.FC = () => {
@@ -24,6 +24,7 @@ const Navbar: React.FC = () => {
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Experience', href: '#experience' },
+    { name: 'Certificates', href: '#certificates' },
     { name: 'Projects', href: '#projects' },
     { name: 'Articles', href: '#articles' },
     { name: 'Contact', href: '#contact' },
@@ -31,9 +32,7 @@ const Navbar: React.FC = () => {
 
   const socialLinks = [
     { icon: <Github size={20} />, href: 'https://github.com/SandaruChamod', label: 'GitHub' },
-    { icon: <Linkedin size={20} />, href: 'https://linkedin.com/in/sandaru-kalapuge', label: 'LinkedIn' },
-    { icon: <Mail size={20} />, href: 'mailto:sandaruchamod97@gmail.com', label: 'Email' },
-    { icon: <FileText size={20} />, href: '#resume', label: 'Resume' },
+    { icon: <Linkedin size={20} />, href: 'https://linkedin.com/in/sandaru-kalapuge', label: 'LinkedIn' }
   ];
 
   return (
@@ -53,8 +52,8 @@ const Navbar: React.FC = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-10">
-          <ul className="flex space-x-8">
+        <div className="hidden md:flex items-center space-x-8">
+          <ul className="flex space-x-6">
             {navItems.map((item) => (
               <li key={item.name}>
                 <a
@@ -67,7 +66,7 @@ const Navbar: React.FC = () => {
             ))}
           </ul>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 ml-6">
             {socialLinks.map((link) => (
               <a
                 key={link.label}

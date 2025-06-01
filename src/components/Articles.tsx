@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ExternalLink, Calendar } from 'lucide-react';
+import { ExternalLink, Calendar, Tag } from 'lucide-react';
 import { articles } from '../data/articles';
 
 const Articles: React.FC = () => {
@@ -52,10 +52,23 @@ const Articles: React.FC = () => {
                   <img
                     src={article.image}
                     alt={article.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent"></div>
+                  
+                  {/* Tags */}
+                  <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+                    {article.tags.map((tag, tagIndex) => (
+                      <div
+                        key={tagIndex}
+                        className="flex items-center space-x-1 bg-gray-900/90 backdrop-blur-sm rounded-full px-3 py-1 border border-primary-500/30"
+                      >
+                        <Tag size={12} className="text-primary-400" />
+                        <span className="text-xs font-medium text-primary-400">{tag}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
                 
                 <div className="p-8">

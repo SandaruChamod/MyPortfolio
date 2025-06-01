@@ -5,6 +5,18 @@ export interface Skill {
 
 export interface Project {
   title: string;
+  subtitle: string;
+  description: string;
+  details?: string;
+  technologies: string[];
+  image: string;
+  category: string;
+  githubUrl?: string;
+  demoUrl?: string;
+}
+
+export interface OpenSourceProject {
+  title: string;
   description: string;
   technologies: string[];
   image: string;
@@ -18,6 +30,7 @@ export interface Article {
   image: string;
   url: string;
   date: string;
+  tags: string[];
 }
 
 export interface Experience {
@@ -35,4 +48,12 @@ export interface Education {
   location: string;
   period: string;
   achievements?: string[];
+}
+
+export interface Certificate {
+  title: string;
+  issuer: string;
+  date: string;
+  image?: string;
+  url?: string;
 }

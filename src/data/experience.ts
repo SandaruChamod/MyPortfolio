@@ -26,7 +26,7 @@ export const education: Education[] = [
     degree: "BEng (Hons) Software Engineering",
     institution: "University of Westminster",
     location: "United Kingdom",
-    period: "2014 - 2018",
+    period: "2018 - 2023",
     achievements: ["First Class Honors"]
   }
 ];

@@ -4,11 +4,39 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
+import Certificates from './components/Certificates';
 import Projects from './components/Projects';
 import Articles from './components/Articles';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { motion } from 'framer-motion';
+
+const FloatingBubble: React.FC<{ 
+  size: string;
+  color: string;
+  left: string;
+  top: string;
+  duration: number;
+  delay: number;
+}> = ({ size, color, left, top, duration, delay }) => (
+  <motion.div
+    className={`fixed rounded-full backdrop-blur-sm ${color}`}
+    style={{ width: size, height: size, left, top }}
+    initial={{ opacity: 0, scale: 0.5 }}
+    animate={{
+      opacity: [0.3, 0.8, 0.3],
+      scale: [1, 1.2, 1],
+      y: [-20, 20, -20],
+      x: [-10, 10, -10],
+    }}
+    transition={{
+      duration,
+      delay,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }}
+  />
+);
 
 function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -51,8 +79,16 @@ function App() {
   return (
     <div className="min-h-screen font-sans bg-gray-900 relative">
       {/* Background Effects */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary-900/30 via-gray-900 to-gray-900"></div>
+        
+        {/* Floating Bubbles */}
+        <FloatingBubble size="180px" color="bg-primary-400/10" left="5%" top="20%" duration={8} delay={0} />
+        <FloatingBubble size="140px" color="bg-secondary-400/10" left="80%" top="15%" duration={7} delay={1} />
+        <FloatingBubble size="160px" color="bg-primary-500/10" left="70%" top="60%" duration={9} delay={2} />
+        <FloatingBubble size="120px" color="bg-secondary-500/10" left="15%" top="70%" duration={6} delay={1.5} />
+        <FloatingBubble size="200px" color="bg-primary-600/10" left="40%" top="80%" duration={8} delay={0.5} />
+        <FloatingBubble size="150px" color="bg-secondary-600/10" left="60%" top="25%" duration={7} delay={2.5} />
       </div>
 
       {/* Enhanced Cursor Effect */}
@@ -91,6 +127,7 @@ function App() {
         <About mousePosition={mousePosition} />
         <Skills />
         <Experience />
+        <Certificates />
         <Projects />
         <Articles />
         <Contact />

@@ -29,9 +29,9 @@ const Experience: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Work Experience */}
-          <div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Work Experience - Takes up 2 columns */}
+          <div className="lg:col-span-2">
             <div className="flex items-center mb-8">
               <div className="bg-primary-500/20 p-3 rounded-full">
                 <Briefcase size={28} className="text-primary-400" />
@@ -47,7 +47,7 @@ const Experience: React.FC = () => {
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                <div className="bg-gray-800/50 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-gray-700/50">
+                <div className="backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-white/10">
                   <div className="flex items-start justify-between mb-6">
                     <h4 className="text-2xl font-bold text-white">{exp.company}</h4>
                     <div className="flex items-center text-gray-300">
@@ -56,23 +56,19 @@ const Experience: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="space-y-6">
+                  <div className="space-y-8">
                     {exp.positions.map((position, posIndex) => (
-                      <motion.div
-                        key={posIndex}
-                        className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-4 before:w-4 before:h-4 before:bg-primary-600 before:rounded-full before:shadow-md"
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: posIndex * 0.2 }}
-                      >
-                        <div className="bg-gray-700/30 rounded-lg p-6">
-                          <h5 className="text-xl font-semibold text-white mb-2">{position.title}</h5>
-                          <div className="flex items-center text-primary-400">
-                            <Calendar size={16} className="mr-2" />
-                            <span className="font-medium">{position.period}</span>
+                      <div key={posIndex}>
+                        <div className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-4 before:w-4 before:h-4 before:bg-primary-600 before:rounded-full before:shadow-md mb-6">
+                          <div className="backdrop-blur-sm bg-gray-800/30 rounded-lg p-6 border border-primary-500/20">
+                            <h5 className="text-xl font-semibold text-white mb-2">{position.title}</h5>
+                            <div className="flex items-center text-primary-400">
+                              <Calendar size={16} className="mr-2" />
+                              <span className="font-medium">{position.period}</span>
+                            </div>
                           </div>
                         </div>
-                      </motion.div>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -80,7 +76,7 @@ const Experience: React.FC = () => {
             ))}
           </div>
 
-          {/* Education */}
+          {/* Education - Takes up 1 column */}
           <div>
             <div className="flex items-center mb-8">
               <div className="bg-secondary-500/20 p-3 rounded-full">
@@ -97,7 +93,7 @@ const Experience: React.FC = () => {
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                <div className="bg-gray-800/50 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-gray-700/50">
+                <div className="backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-white/10">
                   <h4 className="text-2xl font-bold text-white mb-3">{edu.degree}</h4>
                   <p className="text-xl text-gray-300 mb-2">{edu.institution}</p>
                   
